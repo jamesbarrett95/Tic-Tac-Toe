@@ -1,0 +1,76 @@
+html, body {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+.container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 60%;
+}
+
+.board-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.choices {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+}
+
+.choice {
+  display: flex;
+  margin-left: 10px;
+  margin-right: 10px;
+  justify-content: center;
+  align-items: center;
+  width: 100px;
+  height: 100px;
+  cursor: pointer;
+  border: 1px solid;
+}
+
+.scores {
+  display: none;
+  justify-content: center;
+  margin-bottom: 40px;
+}
+
+.scores > div {
+  margin-left: 10px;
+  margin-right: 10px;
+  border: 1px solid;
+}
+
+.playerScore,
+.computerScore {
+  margin-left: 4px;
+}
+
+.board {
+  display: none;
+  flex-wrap: wrap;
+}
+
+.tile {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex: 0 0 32%;
+  height: 161px;
+  width: 56px;
+  border: 1px solid;
+  cursor: pointer;
+}
+
+.tile:hover {
+  background: rgba(0, 0, 0, 0.1);
+}
