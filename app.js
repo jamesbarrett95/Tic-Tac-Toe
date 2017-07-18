@@ -71,8 +71,13 @@ function checkIfWinner (combination, tiles, isPlayer) {
   const isWinner = winningCombinations.some(winner)
   const isDraw = draw(tiles)
 
+  if (isDraw) {
+    prompt.innerHTML = `It's a draw!`
+    optionButtons[0].style.display = 'flex'
+  }
+
   if (isWinner) {
-    tiles.forEach(function(tile) {
+    tiles.forEach(function (tile) {
       tile.classList.add('disabled')
     })
     if (isPlayer) {
@@ -85,11 +90,6 @@ function checkIfWinner (combination, tiles, isPlayer) {
       computerScore.textContent++
     }
   }
-
-  if (isDraw) {
-    prompt.innerHTML = `It's a draw!`
-    optionButtons[0].style.display = 'flex'
-  }
 }
 
 function disableTile (tile) {
@@ -97,9 +97,6 @@ function disableTile (tile) {
 }
 
 function computerPlaying () {
-  if (computerCombinations.length === 3) {
-    playerCombinations.length = 0
-  }
   const indexOfTile = Math.floor(Math.random() * tiles.length)
   const randomTile = tiles[indexOfTile]
   if (randomTile.classList.value.includes('disabled')) {
@@ -114,9 +111,6 @@ function computerPlaying () {
 }
 
 function userPlaying () {
-  if (playerCombinations.length === 3) {
-    playerCombinations.length = 0
-  }
   const indexOfTile = parseInt(this.dataset.tile)
   playerCombinations.push(indexOfTile)
   this.innerHTML = playerChoice
