@@ -17,6 +17,8 @@ html, body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  margin-bottom: 40px;
+  margin-top: 40px;
 }
 
 .choices {
@@ -41,13 +43,13 @@ html, body {
 .scores {
   display: none;
   justify-content: center;
-  margin-bottom: 40px;
 }
 
 .scores > div {
   margin-left: 10px;
   margin-right: 10px;
   border: 1px solid;
+  padding: 10px;
 }
 
 .playerScore,
@@ -71,6 +73,26 @@ html, body {
   cursor: pointer;
 }
 
+.tile.disabled {
+  cursor: auto;
+  pointer-events: none;
+}
+
 .tile:hover {
   background: rgba(0, 0, 0, 0.1);
+}
+
+.winner-prompt {
+  display: flex;
+  justify-content: center;
+  font-size: 30px;
+}
+
+.option-buttons {
+  display: none;
+  justify-content: center;
+}
+
+button[data-option="resetAll"] {
+  margin-left: 10px;
 }
